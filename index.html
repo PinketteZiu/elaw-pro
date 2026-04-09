@@ -1,597 +1,38 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELAW PRO — Votre assistante administrative & juridique</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --noir:     #0E0B16;
-    --noir-sec: #14111C;
-    --noir-ter: #1A1724;
-    --or:       #B6BC5A;
-    --or-light: #D4D97A;
-    --or-dark:  #8A8F3A;
-    --gris:     #E5E5E5;
-    --gris-mut: #A0A0A0;
-    --blanc:    #FFFFFF;
-    --border:   rgba(182, 188, 90, 0.18);
-    --font:     'Poppins', sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--font);
-    background: var(--noir);
-    color: var(--gris);
-    font-weight: 300;
-    line-height: 1.7;
-    font-size: 10pt;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(14, 11, 22, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2.5rem;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    font-size: 14pt;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: var(--or);
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-
-  .nav-links a {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gris-mut);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--or); }
-
-  section { padding: 6rem 2rem; }
-
-  .container { max-width: 1060px; margin: 0 auto; }
-
-  .section-label {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--or);
-    margin-bottom: 1.2rem;
-    display: block;
-  }
-
-  h1 {
-    font-weight: 600;
-    font-size: clamp(2rem, 4.5vw, 3.4rem);
-    line-height: 1.15;
-    color: var(--blanc);
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-  }
-
-  h1 em { font-style: normal; color: var(--or); }
-
-  h2 {
-    font-weight: 600;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    line-height: 1.2;
-    color: var(--blanc);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-  }
-
-  h3 {
-    font-weight: 600;
-    font-size: 12pt;
-    color: var(--blanc);
-    margin-bottom: 0.6rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-
-  p { font-size: 10pt; color: var(--gris-mut); line-height: 1.8; font-weight: 300; }
-
-  .btn {
-    display: inline-block;
-    padding: 0.85rem 2rem;
-    font-family: var(--font);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.25s;
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary { background: var(--or); color: var(--noir); }
-  .btn-primary:hover { background: var(--or-light); }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--or);
-    border: 1px solid var(--or);
-    margin-left: 1rem;
-  }
-
-  .btn-outline:hover { background: rgba(182, 188, 90, 0.08); }
-
-  /* HERO */
-  #accueil {
-    padding-top: 10rem;
-    padding-bottom: 6rem;
-    background: var(--noir);
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  #accueil::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(182,188,90,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--or);
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 30px; height: 1px;
-    background: var(--or);
-  }
-
-  .hero-subtitle {
-    font-size: 10pt;
-    color: var(--gris-mut);
-    margin: 1.8rem 0 2.8rem;
-    max-width: 440px;
-    line-height: 1.9;
-  }
-
-  .hero-image { position: relative; }
-
-  .hero-img-wrapper {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: var(--noir-ter);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .hero-img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  .hero-img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.8rem; color: var(--or-dark);
-  }
-
-  .hero-img-placeholder svg { width: 44px; height: 44px; opacity: 0.4; }
-
-  .hero-img-placeholder span {
-    font-size: 0.72rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gris-mut);
-  }
-
-  .hero-tag {
-    position: absolute;
-    bottom: -1.2rem; left: -1.2rem;
-    background: var(--or);
-    padding: 0.85rem 1.5rem;
-    font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--noir);
-  }
-
-  /* SERVICES */
-  #services { background: var(--noir-sec); }
-
-  .services-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 3.5rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .service-card {
-    padding: 2.5rem 2rem;
-    background: var(--noir-sec);
-    transition: background 0.2s;
-  }
-
-  .service-card:hover { background: var(--noir-ter); }
-
-  .service-icon {
-    width: 28px; height: 2px;
-    background: var(--or);
-    margin-bottom: 1.5rem;
-  }
-
-  .service-card p { font-size: 9.5pt; margin-top: 0.5rem; }
-
-  /* ABOUT */
-  #about { background: var(--noir); }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-img-wrapper {
-    aspect-ratio: 3/4;
-    background: var(--noir-ter);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .about-img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  .about-img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.8rem;
-  }
-
-  .about-img-placeholder svg { width: 44px; height: 44px; opacity: 0.3; color: var(--or-dark); }
-  .about-img-placeholder span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-mut); }
-
-  .about-text p { margin-bottom: 1.1rem; }
-
-  .about-values {
-    margin-top: 2rem;
-    display: flex; flex-direction: column; gap: 0.7rem;
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-  }
-
-  .about-value {
-    display: flex; align-items: center; gap: 1rem;
-    font-size: 9.5pt; font-weight: 400; color: var(--gris);
-  }
-
-  .about-value::before {
-    content: '';
-    display: block;
-    width: 20px; height: 1px;
-    background: var(--or); flex-shrink: 0;
-  }
-
-  /* TESTIMONIALS */
-  #temoignages { background: var(--noir-sec); }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .testimonial-card {
-    padding: 2rem;
-    border: 1px solid var(--border);
-    background: var(--noir-ter);
-    position: relative;
-  }
-
-  .testimonial-card::before {
-    content: '"';
-    position: absolute;
-    top: 1rem; right: 1.5rem;
-    font-size: 3rem; font-weight: 600;
-    color: var(--or); opacity: 0.25; line-height: 1;
-  }
-
-  .testimonial-quote {
-    font-size: 10pt; font-style: italic; font-weight: 300;
-    color: var(--gris); line-height: 1.75; margin-bottom: 1.5rem;
-  }
-
-  .testimonial-author {
-    font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--or);
-  }
-
-  .testimonial-role { font-size: 0.74rem; color: var(--gris-mut); margin-top: 0.2rem; }
-
-  /* TARIFS */
-  #tarifs { background: var(--noir); }
-
-  .tarifs-header {
-    text-align: center;
-    max-width: 560px;
-    margin: 0 auto 3.5rem;
-  }
-
-  .tarifs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .tarif-card {
-    padding: 2.5rem 2rem;
-    border: 1px solid var(--border);
-    background: var(--noir-sec);
-    display: flex; flex-direction: column;
-    transition: border-color 0.2s;
-  }
-
-  .tarif-card:hover { border-color: rgba(182,188,90,0.4); }
-
-  .tarif-card.featured { background: var(--or); border-color: var(--or); }
-  .tarif-card.featured h3 { color: var(--noir); }
-  .tarif-card.featured .tarif-price { color: var(--noir); }
-  .tarif-card.featured .tarif-unit { color: rgba(14,11,22,0.55); }
-  .tarif-card.featured p { color: rgba(14,11,22,0.65); }
-  .tarif-card.featured .tarif-divider { background: rgba(14,11,22,0.15); }
-  .tarif-card.featured .tarif-feature { color: var(--noir); }
-  .tarif-card.featured .tarif-feature::before { background: var(--noir); }
-
-  .tarif-price {
-    font-size: 1.9rem; font-weight: 300;
-    color: var(--or); line-height: 1.1;
-    margin: 0.8rem 0 0.2rem;
-  }
-
-  .tarif-unit {
-    font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.08em; color: var(--gris-mut);
-    text-transform: uppercase; margin-bottom: 1rem;
-  }
-
-  .tarif-divider { height: 1px; background: var(--border); margin: 1rem 0; }
-
-  .tarif-feature {
-    font-size: 9pt; color: var(--gris-mut);
-    padding: 0.2rem 0;
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-
-  .tarif-feature::before {
-    content: '';
-    width: 12px; height: 1px;
-    background: var(--or); flex-shrink: 0;
-  }
-
-  .tarif-note {
-    text-align: center; font-size: 8.5pt;
-    color: var(--gris-mut); margin-top: 2.5rem; font-style: italic;
-  }
-
-  /* CONTACT */
-  #contact { background: var(--noir-sec); }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .contact-info p { margin-bottom: 2rem; }
-
-  .contact-detail {
-    display: flex; flex-direction: column; gap: 0.3rem;
-    margin-bottom: 1.5rem; padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .contact-detail-label {
-    font-size: 0.68rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase; color: var(--or);
-  }
-
-  .contact-detail-value {
-    font-size: 10pt; font-weight: 400;
-    color: var(--gris); text-decoration: none; transition: color 0.2s;
-  }
-
-  .contact-detail-value:hover { color: var(--or); }
-
-  .cgv-link {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 0.76rem; font-weight: 400;
-    letter-spacing: 0.06em; color: var(--gris-mut);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.15rem;
-    transition: color 0.2s; margin-top: 0.5rem;
-  }
-
-  .cgv-link:hover { color: var(--or); }
-
-  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-
-  label {
-    font-size: 0.68rem; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--or);
-  }
-
-  input, textarea, select {
-    font-family: var(--font);
-    font-size: 9.5pt; font-weight: 300;
-    color: var(--gris);
-    background: var(--noir-ter);
-    border: 1px solid var(--border);
-    padding: 0.85rem 1rem;
-    outline: none; transition: border-color 0.2s;
-    width: 100%; appearance: none;
-  }
-
-  input::placeholder, textarea::placeholder { color: rgba(160,160,160,0.35); }
-  input:focus, textarea:focus, select:focus { border-color: rgba(182,188,90,0.45); }
-  select option { background: var(--noir-ter); color: var(--gris); }
-  textarea { resize: vertical; min-height: 130px; }
-
-  .form-submit {
-    display: flex; align-items: center;
-    justify-content: space-between; margin-top: 0.5rem; gap: 1.5rem;
-  }
-
-  .form-legal {
-    font-size: 8pt; color: rgba(160,160,160,0.45);
-    max-width: 240px; line-height: 1.5;
-  }
-
-  .form-success {
-    display: none;
-    padding: 1rem 1.5rem;
-    background: rgba(182,188,90,0.08);
-    border: 1px solid var(--border);
-    font-size: 9.5pt; color: var(--or);
-    text-align: center; margin-top: 0.5rem;
-  }
-
-  footer {
-    background: var(--noir);
-    padding: 2.5rem 2rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .footer-content {
-    max-width: 1060px; margin: 0 auto;
-    display: flex; align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
-  }
-
-  .footer-brand {
-    font-size: 0.82rem; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--or);
-  }
-
-  .footer-links { display: flex; gap: 2rem; list-style: none; }
-
-  .footer-links a {
-    font-size: 0.72rem; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--gris-mut);
-    text-decoration: none; transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--or); }
-
-  .footer-copy { font-size: 0.72rem; color: rgba(160,160,160,0.35); }
-
-  @media (max-width: 768px) {
-    .hero-grid, .about-grid, .contact-grid, .services-header { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-tag { display: none; }
-    .services-grid, .testimonials-grid, .tarifs-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .form-submit { flex-direction: column; align-items: flex-start; }
-    .footer-content { flex-direction: column; text-align: center; }
-    nav { padding: 0 1.2rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.2rem; }
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <a href="#accueil" class="nav-logo">ELAW PRO</a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#tarifs">Tarifs</a></li>
-    <li><a href="#temoignages">Références</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="btn btn-primary" style="font-size:0.7rem;padding:0.6rem 1.4rem;">Me contacter</a>
-</nav>
+  <html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="ELAW PRO vous accompagne dans la gestion de vos tâches administratives et juridiques. Disponible, rigoureuse et réactive, je prends en charge vos missions pour vous permettre de vous concentrer sur votre cœur de métier. Contactez-moi pour un devis personnalisé.">
+    <title>ELAW PRO — Votre assistante administrative & juridique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <a href="#accueil" class="nav-logo">
+       <img id="logo" src="images/Logo ElawPro.png" alt="ElawPro" width="200" style="position: absolute; top: 10px; left: 10px; border-radius: 50%; filter: drop-shadow(0 4px 12px rgba(182,188,90,0.3));">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#temoignages">Références</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary" style="font-size:0.7rem;padding:0.6rem 1.4rem;">Me contacter</a>
+    </nav>
 
 <section id="accueil">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text">
-        <div class="hero-eyebrow">Assistante Administrative & Juridique</div>
-        <h1>Votre soutien administratif <em>au quotidien</em></h1>
-        <p class="hero-subtitle">Je prends en charge vos tâches administratives et juridiques afin que vous puissiez vous concentrer sur votre cœur de métier. Disponible, rigoureuse et réactive.</p>
-        <a href="#contact" class="btn btn-primary">Prendre contact</a>
+        <h1>Assistante juridique et administrative indépendante</h1>
+        <p class="hero-subtitle">J’accompagne chaque Avocat vers une organisation claire et une tranquilité d’esprit.</p>
+        <a href="#contact" class="btn btn-primary">Contactez-moi</a>
         <a href="#services" class="btn btn-outline">Mes services</a>
-      </div>
-      <div class="hero-image">
-        <div class="hero-img-wrapper">
-          <!-- Remplacer par : <img src="images/hero.jpg" alt="ELAW PRO - assistante administrative"> -->
-          <div class="hero-img-placeholder">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="14" y="4" width="20" height="20" rx="10" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M4 44c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <span>Photo à ajouter</span>
-          </div>
-        </div>
-        <div class="hero-tag">Disponible pour vos missions</div>
       </div>
     </div>
   </div>
@@ -601,26 +42,48 @@
   <div class="container">
     <div class="services-header">
       <div>
-        <span class="section-label">Mes prestations</span>
+        <p class="section-label">Mes domaines d'expertises</p>
         <h2>Un accompagnement sur mesure</h2>
       </div>
-      <p>Chaque mission est traitée avec rigueur et discrétion. Que vous soyez professionnel libéral, TPE ou particulier, j'adapte mes services à vos besoins spécifiques.</p>
+      <p>Chaque mission est traitée avec rigueur et discrétion. J'adapte mes services à vos besoins spécifiques.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"></div>
-        <h3>Gestion administrative</h3>
-        <p>Courriers, classement, archivage, gestion des agendas, rédaction de documents, suivi de dossiers.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"></div>
         <h3>Assistance juridique</h3>
-        <p>Rédaction de contrats, mise en forme de conclusions, veille documentaire, gestion des formalités.</p>
+        <ul>
+          <li>Rédaction d'actes de procédures</li>
+          <li>Formalités d'exécution des décisions</li>
+          <li>Gestion des procédures devant la Cour d'Appel</li>
+          <li>Suivi des délais de procédures</li>
+          <li>Gestion du RPVA</li>
+          <li>Préparation des dossiers de plaidoirie</li>
+          <li>Dossiers d'aide juridictionnelle</li>
+          <li>Rédaction de conventions d'honoraires</li>
+        </ul>
       </div>
       <div class="service-card">
         <div class="service-icon"></div>
-        <h3>Secrétariat externalisé</h3>
-        <p>Accueil téléphonique, gestion des mails, prise de rendez-vous, saisie et mise en forme de documents.</p>
+        <h3>Assistance administrative</h3>
+        <ul>
+          <li>Devis et facturation</li>
+          <li>Relance des impayés</li>
+          <li>Mise en demeure de payer</li>
+          <li>Relecture et correction de documents</li>
+          <li>Retranscription de dictées et notes manuscrites...</li>
+          <li>Rédaction de divers courriers</li>
+          <li>Tri & archivage</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Spécialisation en droit du travail</h3>
+        <ul>
+          <li>Saisie des contrats de travail et des lettres de mission</li>
+          <li>Saisie des courriers de sanction disciplinaire</li>
+          <li>Saisie des convocation à entretien préalable</li>
+          <li>Saisie des lettres de licenciement</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -636,15 +99,15 @@
             <rect x="14" y="4" width="20" height="20" rx="10" stroke="currentColor" stroke-width="1.5"/>
             <path d="M4 44c0-11.046 8.954-20 20-20s20 8.954 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
-          <span>Photo à ajouter</span>
+          <p><img src="images/Elodie.png" alt="Elodie Vidal"></p>
         </div>
       </div>
       <div class="about-text">
-        <span class="section-label">Qui suis-je</span>
-        <h2>Votre partenaire de confiance</h2>
-        <p>Forte de plusieurs années d'expérience dans le domaine administratif et juridique, j'accompagne des professionnels et des particuliers dans la gestion de leurs obligations du quotidien.</p>
-        <p>Ma double compétence administrative et juridique me permet d'intervenir de manière transversale, en garantissant à chacun de mes clients un suivi personnalisé, précis et confidentiel.</p>
-        <p>Basée dans la région [Votre ville], j'interviens en présentiel et à distance selon vos besoins.</p>
+        <p class="section-label">Qui suis-je</p>
+        <h2>Votre collaboratrice de confiance</h2>
+        <h3>Assistante juridique depuis 11 ans</h3>
+        <p>Titulaire d’un Master 2 en droit du travail et forte de plus de 10 ans d’expérience en cabinets d’avocats, je vous accompagne dans la gestion de vos tâches administratives et juridiques.</p>
+        <p>Avec ELAW PRO, déléguez vos formalités en toute confiance. Je vous accompagne avec rigueur, réactivité et discrétion pour simplifier votre quotidien.</p>
         <div class="about-values">
           <div class="about-value">Rigueur & fiabilité</div>
           <div class="about-value">Confidentialité absolue</div>
@@ -656,9 +119,49 @@
   </div>
 </section>
 
+<section id="tarifs">
+  <div class="container">
+    <div class="tarifs-header">
+      <p class="section-label">Tarification</p>
+      <h2>Des formules claires et transparentes</h2>
+      <p>Chaque mission est unique. Ces tarifs sont donnés à titre indicatif — contactez-moi pour un devis personnalisé.</p>
+    </div>
+    <div class="tarifs-grid">
+      <div class="tarif-card">
+        <h3>Mission ponctuelle</h3>
+        <div class="tarif-price">À partir de<br><p style="font-size:2rem;">40 €</p></div>
+        <div class="tarif-unit">par heure</div>
+        <div class="tarif-divider"></div>
+        <div class="tarif-feature">Sans engagement</div>
+        <div class="tarif-feature">Facturation au temps réel</div>
+        <div class="tarif-feature">Devis gratuit</div>
+      </div>
+      <div class="tarif-card featured">
+        <h3>Forfait mensuel</h3>
+        <div class="tarif-price">À partir de<br><p style="font-size:2rem;">XXX €</p></div>
+        <div class="tarif-unit">par mois</div>
+        <div class="tarif-divider"></div>
+        <div class="tarif-feature">Volume d'heures défini</div>
+        <div class="tarif-feature">Suivi prioritaire</div>
+        <div class="tarif-feature">Rapport mensuel</div>
+      </div>
+      <div class="tarif-card">
+        <h3>Sur devis</h3>
+        <div class="tarif-price" style="font-size:1.3rem;padding-top:0.4rem;">Mission spécifique</div>
+        <div class="tarif-unit">tarification dédiée</div>
+        <div class="tarif-divider"></div>
+        <div class="tarif-feature">Projets complexes</div>
+        <div class="tarif-feature">Volume important</div>
+        <div class="tarif-feature">Besoin sur mesure</div>
+      </div>
+    </div>
+    <p class="tarif-note">Tous les tarifs sont exprimés HT — TVA non applicable, article 293B du CGI.</p>
+  </div>
+</section>
+
 <section id="temoignages">
   <div class="container">
-    <span class="section-label">Ils me font confiance</span>
+    <p class="section-label">Ils me font confiance</p>
     <h2>Références clients</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card">
@@ -680,64 +183,24 @@
   </div>
 </section>
 
-<section id="tarifs">
-  <div class="container">
-    <div class="tarifs-header">
-      <span class="section-label">Tarification</span>
-      <h2>Des formules claires et transparentes</h2>
-      <p>Chaque mission est unique. Ces tarifs sont donnés à titre indicatif — contactez-moi pour un devis personnalisé.</p>
-    </div>
-    <div class="tarifs-grid">
-      <div class="tarif-card">
-        <h3>Mission ponctuelle</h3>
-        <div class="tarif-price">À partir de<br><span style="font-size:2rem;">XX €</span></div>
-        <div class="tarif-unit">par heure</div>
-        <div class="tarif-divider"></div>
-        <div class="tarif-feature">Sans engagement</div>
-        <div class="tarif-feature">Facturation au temps réel</div>
-        <div class="tarif-feature">Devis gratuit</div>
-      </div>
-      <div class="tarif-card featured">
-        <h3>Forfait mensuel</h3>
-        <div class="tarif-price">À partir de<br><span style="font-size:2rem;">XXX €</span></div>
-        <div class="tarif-unit">par mois</div>
-        <div class="tarif-divider"></div>
-        <div class="tarif-feature">Volume d'heures défini</div>
-        <div class="tarif-feature">Suivi prioritaire</div>
-        <div class="tarif-feature">Rapport mensuel</div>
-      </div>
-      <div class="tarif-card">
-        <h3>Sur devis</h3>
-        <div class="tarif-price" style="font-size:1.3rem;padding-top:0.4rem;">Mission spécifique</div>
-        <div class="tarif-unit">tarification dédiée</div>
-        <div class="tarif-divider"></div>
-        <div class="tarif-feature">Projets complexes</div>
-        <div class="tarif-feature">Volume important</div>
-        <div class="tarif-feature">Besoin sur mesure</div>
-      </div>
-    </div>
-    <p class="tarif-note">Tous les tarifs sont exprimés HT — TVA non applicable, article 293B du CGI.</p>
-  </div>
-</section>
-
 <section id="contact">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <span class="section-label">Contact</span>
+        <p class="section-label">Contact</p>
         <h2>Discutons de votre projet</h2>
         <p>Vous avez un besoin ponctuel ou récurrent ? Remplissez le formulaire ou contactez-moi directement — je vous réponds sous 24h.</p>
         <div class="contact-detail">
-          <span class="contact-detail-label">Téléphone</span>
-          <a href="tel:+33600000000" class="contact-detail-value">06 00 00 00 00</a>
+          <p class="contact-detail-label">Téléphone</p>
+          <a href="tel:+33600000000" class="contact-detail-value">06 08 04 67 61</a>
         </div>
         <div class="contact-detail">
-          <span class="contact-detail-label">Email</span>
-          <a href="mailto:contact@elawpro.fr" class="contact-detail-value">contact@elawpro.fr</a>
+          <p class="contact-detail-label">Email</p>
+          <a href="mailto:contact@elawpro.fr" class="contact-detail-value">contact[at]elawpro.fr</a>
         </div>
         <div class="contact-detail">
-          <span class="contact-detail-label">Zone d'intervention</span>
-          <span class="contact-detail-value">Toulouse · Montauban · À distance</span>
+          <p class="contact-detail-label">Zone d'intervention</p>
+          <p class="contact-detail-value">Toulouse · Montauban · À distance</p>
         </div>
         <a href="cgv.pdf" target="_blank" rel="noopener" class="cgv-link">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -771,9 +234,6 @@
             <label for="sujet">Nature de la demande</label>
             <select id="sujet" name="sujet">
               <option value="">Sélectionnez...</option>
-              <option value="admin">Gestion administrative</option>
-              <option value="juridique">Assistance juridique</option>
-              <option value="secretariat">Secrétariat externalisé</option>
               <option value="devis">Demande de devis</option>
               <option value="autre">Autre</option>
             </select>
@@ -794,15 +254,17 @@
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-content">
-    <span class="footer-brand">ELAW PRO — Assistante Administrative & Juridique</span>
+    <p class="footer-brand">ELAW PRO — Assistante Administrative & Juridique</p>
+    <a href="https://www.linkedin.com/company/assistante-juridique-independante-freelance/" target="_blank">
+      <i class="fa-brands fa-linkedin fa-2xl" style="color: #768EA6;"></i>
+    </a>
     <ul class="footer-links">
       <li><a href="cgv.pdf" target="_blank" rel="noopener">CGV</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <span class="footer-copy">© 2025 — Tous droits réservés</span>
+    <p class="footer-copy">© 2026 — Tous droits réservés | Créé avec ❤️ par JV</p>
   </div>
 </footer>
 
