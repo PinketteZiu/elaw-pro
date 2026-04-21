@@ -31,14 +31,21 @@
     justify-content: space-between;
   }
 
-  .nav-logo {
+  #logo {
     /* font-size: 12pt; */
     border-radius: 50%;
-    font-weight: 600;
+    width: 200px;
+    position: absolute; top: 10px; left: 10px;
     letter-spacing: 0.05em;
     color: #B79A6C;
     text-decoration: none;
     text-transform: uppercase;
+    transition: width 0.3s ease;
+  }
+
+  .nav-scrolled #logo {
+    width: 70px;
+    border-radius: 0;
   }
 
   .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -55,7 +62,7 @@
 
   .nav-links a:hover { color: #f5c372; }
 
-  section { padding: 6rem 2rem; }
+  section { padding: 50px 32px; }
 
   .container { max-width: 1060px; margin: 0 auto; }
 
@@ -153,7 +160,7 @@
     inset: 0;
     background-image:url('images/fond1.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     opacity: 0.4;
     pointer-events: none;
     z-index: 0;
@@ -235,16 +242,26 @@
   }
 
   /* SERVICES */
-  #services { background: #0E0B16; }
+  #services { background: #0E0B16;
+    position: relative;
+    overflow: hidden;
+  }
 
-  .services-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 3.5rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid #333;
+  #services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('images/fond2.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #services .container {
+    position: relative;
+    z-index: 1;
   }
 
   .services-grid {
@@ -255,9 +272,11 @@
     border: 1px solid var(--border);
   }
 
+  .services-header p {margin-bottom: 10px; color: whitesmoke; font-size: 15px;}
+
   .service-card {
     padding: 2.5rem 2rem;
-    background: #0E0B16;
+    background: #0e0b16b0;
     transition: background 0.2s;
   }
 
@@ -359,7 +378,27 @@
   .testimonial-role { font-size: 0.74rem; color: var(--gris-mut); margin-top: 0.2rem; }
 
   /* TARIFS */
-  #tarifs { background: var(--noir); }
+  #tarifs { background: #0E0B16; position: relative;
+    overflow: hidden;
+  }
+
+  #tarifs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Remplacer 'images/services-bg.jpg' par ton image */
+    background-image: url('images/fond3.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #tarifs .container {
+    position: relative;
+    z-index: 1;
+  }
 
   .tarifs-header {
     text-align: center;
@@ -378,14 +417,16 @@
   .tarif-card {
     padding: 2.5rem 2rem;
     border: 1px solid var(--border);
-    background: var(--noir-sec);
+    background: #2b2419b6;
     display: flex; flex-direction: column;
     transition: border-color 0.2s;
   }
 
-  .tarif-card:hover { border-color: rgba(182,188,90,0.4); }
+  .tarif-card:hover { background: #0E0B16; }
+  /* .tarif-card:hover { border-color: rgba(182,188,90,0.4); } */
 
   .tarif-card.featured { background: var(--or); border-color: var(--or); }
+  .tarif-card.featured:hover { background: #0E0B16; }
   .tarif-card.featured h3 { color: var(--noir); }
   .tarif-card.featured .tarif-price { color: var(--noir); }
   .tarif-card.featured .tarif-unit { color: rgba(14,11,22,0.55); }
@@ -426,7 +467,7 @@
   }
 
   /* CONTACT */
-  #contact { background: var(--noir-sec); }
+  #contact { background: #302f2f; }
 
   .contact-grid {
     display: grid;
@@ -435,7 +476,7 @@
     align-items: start;
   }
 
-  .contact-info p { margin-bottom: 2rem; }
+  /* .contact-info p { margin-bottom: 2rem; } */
 
   .contact-detail {
     display: flex; flex-direction: column; gap: 0.3rem;
@@ -446,6 +487,7 @@
   .contact-detail-label {
     font-size: 0.68rem; font-weight: 500;
     letter-spacing: 0.12em; text-transform: uppercase; color: var(--or);
+    margin-bottom: 0
   }
 
   .contact-detail-value {
