@@ -62,7 +62,7 @@
 
   .nav-links a:hover { color: #f5c372; }
 
-  section { padding: 50px 32px; }
+  section { padding: 70px 32px; }
 
   .container { max-width: 1060px; margin: 0 auto; }
 
@@ -372,7 +372,7 @@
 
   .testimonial-author {
     font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--or);
+    letter-spacing: 0.06em; color: var(--or);
   }
 
   .testimonial-role { font-size: 0.74rem; color: var(--gris-mut); margin-top: 0.2rem; }
@@ -570,7 +570,7 @@
 
   .footer-brand {
     font-size: 0.82rem; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--or);
+    letter-spacing: 0.06em; color: var(--or);
   }
 
   .footer-links { display: flex; gap: 2rem; list-style: none; }
@@ -586,6 +586,7 @@
   .footer-copy { font-size: 0.72rem; color: rgba(160,160,160,0.35); }
 
   @media (max-width: 768px) {
+    .container { width: 500px; }
     .hero-grid, .about-grid, .contact-grid, .services-header { grid-template-columns: 1fr; gap: 2rem; }
     .hero-tag { display: none; }
     .services-grid, .testimonials-grid, .tarifs-grid { grid-template-columns: 1fr; }
@@ -596,3 +597,4 @@
     .nav-links { display: none; }
     section { padding: 4rem 1.2rem; }
   }
+  
