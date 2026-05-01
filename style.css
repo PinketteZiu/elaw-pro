@@ -494,7 +494,10 @@
   .contact-detail-value {
     font-size: 10pt; font-weight: 400;
     color: var(--gris); text-decoration: none; transition: color 0.2s;
+    text-decoration: none;
   }
+  
+  .contact-detail a {text-decoration: underline;}
 
   .contact-detail-value:hover { color: var(--or); }
 
