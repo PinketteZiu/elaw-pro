@@ -496,7 +496,7 @@
     color: var(--gris); text-decoration: none; transition: color 0.2s;
     text-decoration: none;
   }
-  
+
   .contact-detail a {text-decoration: underline;}
 
   .contact-detail-value:hover { color: var(--or); }
@@ -601,3 +601,15 @@
     .nav-links { display: none; }
     section { padding: 4rem 1.2rem; }
   }
+
+  @media (max-width: 960px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 300px;
+  }
+}
