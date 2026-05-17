@@ -408,7 +408,7 @@
 
   .tarifs-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     max-width: 960px;
     margin: 0 auto;
@@ -590,7 +590,7 @@
   .footer-copy { font-size: 0.72rem; color: rgba(160,160,160,0.35); }
 
   @media (max-width: 768px) {
-    .container { width: 500px; }
+    .container { width: 100%; padding: 0 1.2rem; }
     .hero-grid, .about-grid, .contact-grid, .services-header { grid-template-columns: 1fr; gap: 2rem; }
     .hero-tag { display: none; }
     .services-grid, .testimonials-grid, .tarifs-grid { grid-template-columns: 1fr; }
@@ -604,12 +604,15 @@
 
   @media (max-width: 960px) {
   .container {
-    width: 700px;
+    width: 90%;
+    max-width: 700px;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 480px) {
   .container {
-    width: 300px;
+    width: 100%;
+    padding: 0 1rem;
   }
+  section { padding: 3rem 1rem; }
 }
