@@ -1,219 +1,253 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="ELAW PRO vous accompagne dans la gestion de vos tâches administratives et juridiques. Disponible, rigoureuse et réactive, je prends en charge vos missions pour vous permettre de vous concentrer sur votre cœur de métier. Contactez-moi pour un devis personnalisé.">
   <title>ELAW PRO — Votre assistante administrative & juridique</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Polices & icônes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles ELAW PRO -->
   <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav>
-    <a href="#accueil" class="nav-logo">
-      <img id="logo" src="images/Logo ElawPro.png" alt="ElawPro" width="200">
-    </a>
 
-    <ul class="nav-links">
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#tarifs">Tarifs</a></li>
-      <li><a href="#temoignages">Références</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary" style="font-size:0.7rem;padding:0.6rem 1.4rem;">Me contacter</a>
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container-fluid px-3 px-lg-5">
+      <a class="navbar-brand" href="#accueil">
+        <img id="logo" src="images/Logo ElawPro.png" alt="ELAW PRO">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tarifs">Tarifs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#temoignages">Références</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a href="#contact" class="btn btn-gold btn-sm-nav">Me contacter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <section id="accueil">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
+  <!-- ===================== HERO ===================== -->
+  <section id="accueil" class="d-flex align-items-center">
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-12 col-lg-8">
           <h1>Assistante juridique et administrative indépendante</h1>
-          <p class="hero-subtitle">J’accompagne chaque Avocat vers une organisation claire et une tranquilité d’esprit.
-          </p>
-          <a href="#contact" class="btn btn-primary">Contactez-moi</a>
-          <a href="#services" class="btn btn-outline">Mes services</a>
+          <p class="hero-subtitle">J’accompagne chaque Avocat vers une organisation claire et une tranquilité d’esprit.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="#contact" class="btn btn-gold">Contactez-moi</a>
+            <a href="#services" class="btn btn-outline-gold">Mes services</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===================== À PROPOS ===================== -->
   <section id="about">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-img-wrapper">
-          <!-- Remplacer par : <img src="images/about.jpg" alt="À propos"> -->
-          <div class="about-img-placeholder">
-            <p><img src="images/Elodie.png" alt="Elodie Vidal"></p>
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-md-8 col-lg-5 mx-auto mx-lg-0">
+          <div class="about-img-wrapper">
+            <img src="images/Elodie.png" alt="Elodie Vidal" class="img-fluid w-100">
           </div>
         </div>
-        <div class="about-text">
+        <div class="col-12 col-lg-7">
           <p class="section-label">Qui suis-je</p>
           <h2>Votre collaboratrice de confiance</h2>
-          <h3>Elodie Vidal - Assistante juridique depuis 11 ans</h3>
+          <h3>Elodie Vidal — Assistante juridique depuis 11 ans</h3>
           <p>Titulaire d’un Master 2 en droit du travail et forte de plus de 10 ans d’expérience en cabinets d’avocats,
             je vous accompagne dans la gestion de vos tâches administratives et juridiques.</p>
           <p>Déléguez-moi vos formalités en toute confiance. Je vous accompagne avec rigueur, réactivité et
             discrétion pour simplifier votre quotidien.</p>
-          <h3>Pourquoi travaillez avec moi ?</h3>
-          <ul>
+          <h3 class="mt-4">Pourquoi travailler avec moi ?</h3>
+          <ul class="about-values list-unstyled mb-0">
             <li class="about-value">11 ans d'expérience en cabinets d'avocats</li>
             <li class="about-value">Spécialisation en droit social</li>
             <li class="about-value">Gestion des délais de procédure maîtrisée</li>
             <li class="about-value">Travail en autonomie complète</li>
             <li class="about-value">Organisation, réactivité et gestion des urgences</li>
             <li class="about-value">Accompagnement premium sans recrutement salarié</li>
-          <br>
-            <li class="about-value">Rigueur & fiabilité</li>
+            <li class="about-value mt-3">Rigueur & fiabilité</li>
             <li class="about-value">Confidentialité absolue</li>
             <li class="about-value">Réactivité et disponibilité</li>
             <li class="about-value">Adaptabilité aux besoins de chaque client</li>
           </ul>
         </div>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- ===================== SERVICES ===================== -->
   <section id="services">
-    <div class="container">
-      <div class="header">
-        <div>
+    <div class="container position-relative">
+      <div class="mb-4">
+        <div class="col-12 col-lg-7">
           <p class="section-label">Mes domaines d'expertises</p>
-          <h2>Un accompagnement sur mesure</h2>
+          <h2 class="mb-0">Un accompagnement sur mesure</h2>
         </div>
-        <p>Chaque mission est traitée avec rigueur et discrétion. J'adapte mes services à vos besoins spécifiques.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Assistance juridique</h3>
-          <ul>
-            <li>Rédaction d'actes de procédures</li>
-            <li>Formalités d'exécution des décisions</li>
-            <li>Gestion des procédures devant la Cour d'Appel</li>
-            <li>Suivi des délais de procédures</li>
-            <li>Gestion du RPVA</li>
-            <li>Préparation des dossiers de plaidoirie</li>
-            <li>Dossiers d'aide juridictionnelle</li>
-            <li>Rédaction de conventions d'honoraires</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Assistance administrative</h3>
-          <ul>
-            <li>Devis et facturation</li>
-            <li>Relance des impayés</li>
-            <li>Mise en demeure de payer</li>
-            <li>Relecture et correction de documents</li>
-            <li>Retranscription de dictées et notes manuscrites...</li>
-            <li>Rédaction de divers courriers</li>
-            <li>Tri & archivage</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"></div>
-          <h3>Spécialisation en droit du travail</h3>
-          <ul>
-            <li>Saisie des contrats de travail et des lettres de mission</li>
-            <li>Saisie des courriers de sanction disciplinaire</li>
-            <li>Saisie des convocation à entretien préalable</li>
-            <li>Saisie des lettres de licenciement</li>
-          </ul>
+        <div class="col-12 col-lg-5">
+          <p class="mb-0">Chaque mission est traitée avec rigueur et discrétion. J'adapte mes services à vos besoins spécifiques.</p>
         </div>
       </div>
-      <br>
-      <div>
+      <div class="row g-0 services-grid">
+        <div class="col-12 col-md-4">
+          <div class="service-card h-100">
+            <div class="service-icon"></div>
+            <h3>Assistance juridique</h3>
+            <ul>
+              <li>Rédaction d'actes de procédures</li>
+              <li>Formalités d'exécution des décisions</li>
+              <li>Gestion des procédures devant la Cour d'Appel</li>
+              <li>Suivi des délais de procédures</li>
+              <li>Gestion du RPVA</li>
+              <li>Préparation des dossiers de plaidoirie</li>
+              <li>Dossiers d'aide juridictionnelle</li>
+              <li>Rédaction de conventions d'honoraires</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="service-card h-100">
+            <div class="service-icon"></div>
+            <h3>Assistance administrative</h3>
+            <ul>
+              <li>Devis et facturation</li>
+              <li>Relance des impayés</li>
+              <li>Mise en demeure de payer</li>
+              <li>Relecture et correction de documents</li>
+              <li>Retranscription de dictées et notes manuscrites...</li>
+              <li>Rédaction de divers courriers</li>
+              <li>Tri & archivage</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="service-card h-100">
+            <div class="service-icon"></div>
+            <h3>Spécialisation en droit du travail</h3>
+            <ul>
+              <li>Saisie des contrats de travail et des lettres de mission</li>
+              <li>Saisie des courriers de sanction disciplinaire</li>
+              <li>Saisie des convocations à entretien préalable</li>
+              <li>Saisie des lettres de licenciement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
         <h3>Mes disponibilités</h3>
-        <p>En distanciel : Immédiate.</p>
-        <p>En présentiel : À compter de l'automne 2026.</p>
+        <p class="mb-1">En distanciel : Immédiate.</p>
+        <p class="mb-0">En présentiel : À compter de l'automne 2026.</p>
       </div>
     </div>
   </section>
 
+  <!-- ===================== TARIFS ===================== -->
   <section id="tarifs">
-    <div class="container">
-      <div class="header">
+    <div class="container position-relative">
+      <div class="mb-4">
         <p class="section-label">Tarification</p>
         <h2>Des formules claires et transparentes</h2>
         <p><strong>Chaque mission est unique. Aussi, n'hésitez pas à me contacter pour un devis personnalisé.</strong></p>
       </div>
-      <div class="tarifs-grid">
-        <div class="tarif-card">
-          <h3>Mon offre</h3>
-          <div class="tarif-price">
-            <p style="font-size:2rem;">2 000 € HT / mois </p>
+      <div class="row g-4 justify-content-center tarifs-grid">
+        <div class="col-12 col-md-6 col-lg-5">
+          <div class="tarif-card h-100">
+            <h3>Mon offre</h3>
+            <div class="tarif-price">2 000 € HT / mois</div>
+            <div class="tarif-unit">Engagement ≥ 3 mois</div>
+            <div class="tarif-divider"></div>
+            <div class="tarif-feature">Gestion complète des mails et de l'agenda</div>
+            <div class="tarif-feature">Facturation et relance des impayés</div>
+            <div class="tarif-feature">Contacts avec les juridictions (renvois, substitutions, délibérés)</div>
+            <div class="tarif-feature">Communications de conclusions et pièces</div>
+            <div class="tarif-feature">Préparation des dossiers de plaidoirie</div>
+            <div class="tarif-feature">Gestion de la clé RPVA et des délais</div>
+            <div class="tarif-feature">Suivi exécution des dossiers (CARPA, commissaire de justice)</div>
+            <div class="tarif-divider"></div>
+            <p class="mb-0">Point hebdomadaire · Rapport d'activité mensuel · Réactivité garantie</p>
           </div>
-          <div class="tarif-unit">Engagement ≥ 3 mois</div>
-          <div class="tarif-divider"></div>
-          <div class="tarif-feature">Gestion complète des mails et de l'agenda</div>
-          <div class="tarif-feature">Facturation et relance des impayés</div>
-          <div class="tarif-feature">Contacts avec les juridictions (renvois, substitutions, délibérés)</div>
-          <div class="tarif-feature">Communications de conclusions et pièces</div>
-          <div class="tarif-feature">Préparation des dossiers de plaidoirie</div>
-          <div class="tarif-feature">Gestion de la clé RPVA et des délais</div>
-          <div class="tarif-feature">Suivi exécution des dossiers (CARPA, commissaire de justice)</div>
-          <div class="tarif-divider"></div>
-          <p>Point hebdomadaire · Rapport d'activité mensuel · Réactivité garantie</p>
         </div>
-        <div class="tarif-card featured">
-          <h3>Outils inclus</h3>
-          <div class="tarif-unit">Pour toutes missions</div>
-          <div class="tarif-divider"></div>
-          <div class="tarif-feature">Outil Airtable de gestion des délais CPH</div>
-          <div class="tarif-feature">Bibliothèque de modèles mails & courriers</div>
-          <div class="tarif-feature">Annuaire complet des CPH de France</div>
-          <div class="tarif-feature"></div>
+        <div class="col-12 col-md-6 col-lg-5">
+          <div class="tarif-card h-100">
+            <h3>Outils inclus</h3>
+            <div class="tarif-unit">Pour toutes missions</div>
+            <div class="tarif-divider"></div>
+            <div class="tarif-feature">Outil Airtable de gestion des délais CPH</div>
+            <div class="tarif-feature">Bibliothèque de modèles mails & courriers</div>
+            <div class="tarif-feature">Annuaire complet des CPH de France</div>
+          </div>
         </div>
       </div>
-      <p class="tarif-note"> <strong>TVA non applicable, article 293B du CGI.</strong></p>
+      <p class="tarif-note"><strong>TVA non applicable, article 293B du CGI.</strong></p>
     </div>
   </section>
 
+  <!-- ===================== TÉMOIGNAGES ===================== -->
   <section id="temoignages">
     <div class="container">
       <p class="section-label">Ils me font confiance</p>
       <h2>Références clients</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">« J'ai eu le plaisir de collaborer avec Elodie en 2016. En tant qu'assistante juridique, elle a fait preuve d'une rigueur exemplaire dans la gestion de mes dossiers complexes en droit du travail. Sa maîtrise de la procédure civile et sa réactivité ont été des atouts majeurs pour mon cabinet. Je la recommande sans hésitation à tout confrère recherchant une assistante juridique fiable, autonome et dotée d'une solide culture juridique. »</p>
-          <div class="testimonial-author">Me Géraldine BOIGAS</div>
-          <div class="testimonial-role">Avocate, Toulouse</div>
+      <div class="row g-4 mt-1">
+        <div class="col-12 col-lg-4">
+          <div class="testimonial-card h-100">
+            <p class="testimonial-quote">« J'ai eu le plaisir de collaborer avec Elodie en 2016. En tant qu'assistante juridique, elle a fait preuve d'une rigueur exemplaire dans la gestion de mes dossiers complexes en droit du travail. Sa maîtrise de la procédure civile et sa réactivité ont été des atouts majeurs pour mon cabinet. Je la recommande sans hésitation à tout confrère recherchant une assistante juridique fiable, autonome et dotée d'une solide culture juridique. »</p>
+            <div class="testimonial-author">Me Géraldine BOIGAS</div>
+            <div class="testimonial-role">Avocate, Toulouse</div>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">« J’ai rencontré Elodie VIDAL en 2017 à l’occasion du remplacement d’un long arrêt maladie sur blessure de ma Secrétaire.  J’ai été tellement satisfaite du travail réalisé par Elodie VIDAL qu’après le retour de ma Secrétaire, elle a continué à intervenir pour moi, en complément, certaines fins de journées ou après-midi.  Elodie VIDAL maîtrise parfaitement toutes les tâches de Secrétariat : Accueil téléphonique, gestion de l’agenda, gestion des mails, RPVA, dactylographie de tout document (conclusions, Dires, courriers, mémoire, requête, et autres assignations), tri des pièces.  Particulièrement autonome et responsable, elle a même rédigé seule des petits courriers ou conclusions de désistement.  Souriante, calme et rigoureuse, j’ai beaucoup apprécié son travail qui a constitué un véritable soutien pour moi.  Grâce à la confiance que je pouvais avoir en son travail, j’étais sereine. »</p>
-          <div class="testimonial-author">Me Cécile GUILLARD</div>
-          <div class="testimonial-role">Avocate, Toulouse</div>
+        <div class="col-12 col-lg-4">
+          <div class="testimonial-card h-100">
+            <p class="testimonial-quote">« J’ai rencontré Elodie VIDAL en 2017 à l’occasion du remplacement d’un long arrêt maladie sur blessure de ma Secrétaire. J’ai été tellement satisfaite du travail réalisé par Elodie VIDAL qu’après le retour de ma Secrétaire, elle a continué à intervenir pour moi, en complément, certaines fins de journées ou après-midi. Elodie VIDAL maîtrise parfaitement toutes les tâches de Secrétariat : Accueil téléphonique, gestion de l’agenda, gestion des mails, RPVA, dactylographie de tout document (conclusions, Dires, courriers, mémoire, requête, et autres assignations), tri des pièces. Particulièrement autonome et responsable, elle a même rédigé seule des petits courriers ou conclusions de désistement. Souriante, calme et rigoureuse, j’ai beaucoup apprécié son travail qui a constitué un véritable soutien pour moi. Grâce à la confiance que je pouvais avoir en son travail, j’étais sereine. »</p>
+            <div class="testimonial-author">Me Cécile GUILLARD</div>
+            <div class="testimonial-role">Avocate, Toulouse</div>
+          </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">« Je recommande sans réserve Elodie Vidal pour vos besoins en assistance juridique indépendante. Pendant cinq ans à mes côtés, Elodie a été bien plus qu'une assistante : une véritable partenaire de confiance. Réactive, rigoureuse et d'une discrétion irréprochable, elle gère dossiers, actes et procédures avec une aisance qui soulage vraiment. Faire appel à elle, c'est gagner en sérénité.
- »</p>
-          <div class="testimonial-author">Me Juliane POINTEAUX</div>
-          <div class="testimonial-role">Avocate, Toulouse</div>
+        <div class="col-12 col-lg-4">
+          <div class="testimonial-card h-100">
+            <p class="testimonial-quote">« Je recommande sans réserve Elodie Vidal pour vos besoins en assistance juridique indépendante. Pendant cinq ans à mes côtés, Elodie a été bien plus qu'une assistante : une véritable partenaire de confiance. Réactive, rigoureuse et d'une discrétion irréprochable, elle gère dossiers, actes et procédures avec une aisance qui soulage vraiment. Faire appel à elle, c'est gagner en sérénité. »</p>
+            <div class="testimonial-author">Me Juliane POINTEAUX</div>
+            <div class="testimonial-role">Avocate, Toulouse</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===================== CONTACT ===================== -->
   <section id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
+      <div class="row g-5 align-items-start">
+        <div class="col-12 col-lg-5">
           <p class="section-label">Contact</p>
           <h2>Discutons de votre projet</h2>
-          <p style="margin-bottom: 2rem;">Vous avez un besoin ponctuel ou récurrent ? Remplissez le formulaire ou
+          <p class="mb-4">Vous avez un besoin ponctuel ou récurrent ? Remplissez le formulaire ou
             contactez-moi directement — je vous réponds sous 24h.</p>
           <div class="contact-detail">
             <p class="contact-detail-label">Téléphone</p>
-            <a href="tel:+33600000000" class="contact-detail-value">06 08 04 67 61</a>
+            <a href="tel:+33608046761" class="contact-detail-value">06 08 04 67 61</a>
           </div>
           <div class="contact-detail">
             <p class="contact-detail-label">Email</p>
@@ -221,86 +255,92 @@
           </div>
           <div class="contact-detail">
             <p class="contact-detail-label">Zone d'intervention</p>
-            <p class="contact-detail-value">Toulouse · Montauban · Albi · À distance</p>
+            <p class="contact-detail-value mb-0">Toulouse · Montauban · Albi · À distance</p>
           </div>
           <a href="cgv.pdf" target="_blank" rel="noopener" class="cgv-link">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 2h8a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor"
-                stroke-width="1.2" />
+              <path d="M4 2h8a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.2" />
               <path d="M5.5 6h5M5.5 8.5h5M5.5 11h3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
             </svg>
             Consulter les conditions générales de vente (PDF)
           </a>
         </div>
-        <div>
+        <div class="col-12 col-lg-7">
           <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" action="merci.html">
             <input type="hidden" name="form-name" value="contact">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="prenom" class="form-label">Prénom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom" required>
               </div>
-              <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+              <div class="col-12 col-md-6">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
-            </div>
-            <div class="form-group">
-              <label for="telephone">Téléphone</label>
-              <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00">
-            </div>
-            <div class="form-group">
-              <label for="sujet">Nature de la demande</label>
-              <select id="sujet" name="sujet">
-                <option value="">Sélectionnez...</option>
-                <option value="devis">Demande de devis</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Décrivez votre besoin..." required></textarea>
-            </div>
-            <div class="form-submit">
-              <p class="form-legal">En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour
-                vous recontacter.</p>
-              <button type="submit" class="btn btn-primary">Envoyer</button>
-            </div>
-            <div class="form-success" id="formSuccess">
-              Merci pour votre message ! Je vous répondrai dans les plus brefs délais.
+              <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="votre@email.fr" required>
+              </div>
+              <div class="col-12">
+                <label for="telephone" class="form-label">Téléphone</label>
+                <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="06 00 00 00 00">
+              </div>
+              <div class="col-12">
+                <label for="sujet" class="form-label">Nature de la demande</label>
+                <select class="form-select" id="sujet" name="sujet">
+                  <option value="">Sélectionnez...</option>
+                  <option value="devis">Demande de devis</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Décrivez votre besoin..." required></textarea>
+              </div>
+              <div class="col-12 d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3">
+                <p class="form-legal mb-0">En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour vous recontacter.</p>
+                <button type="submit" class="btn btn-gold flex-shrink-0">Envoyer</button>
+              </div>
             </div>
           </form>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <div class="footer-content">
-      <p class="footer-brand">ELAW PRO — Assistante Administrative & Juridique</p>
-      <a href="https://www.linkedin.com/company/assistante-juridique-independante-freelance/" target="_blank">
+    <div class="container text-center d-flex flex-column align-items-center gap-3">
+      <p class="footer-brand mb-0">ELAW PRO — Assistante Administrative & Juridique</p>
+      <a href="https://www.linkedin.com/company/assistante-juridique-independante-freelance/" target="_blank" rel="noopener" aria-label="LinkedIn ELAW PRO">
         <i class="fa-brands fa-linkedin fa-2xl" style="color: #768EA6;"></i>
       </a>
-      <ul class="footer-links">
-        <!-- <li><a href="#contact">Contact</a></li> -->
+      <ul class="footer-links list-unstyled d-flex gap-4 mb-0">
         <li><a href="cgv.pdf" target="_blank" rel="noopener">CGV</a></li>
         <li><a href="mentions-legales.html" target="_blank">Mentions légales</a></li>
       </ul>
-      <p class="footer-copy">© 2026 — Tous droits réservés | Créé avec ❤️ par JV</p>
+      <p class="footer-copy mb-0">© 2026 — Tous droits réservés | Créé avec ❤️ par JV</p>
     </div>
   </footer>
 
+  <!-- Bootstrap JS (navbar burger) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
   <script>
-    window.addEventListener('scroll', function() {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-      nav.classList.add('nav-scrolled');
-      } else {
-      nav.classList.remove('nav-scrolled');
-      }
+    // Fond de la nav au scroll
+    window.addEventListener('scroll', function () {
+      document.getElementById('mainNav').classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
+
+    // Referme le menu burger après un clic sur un lien (mobile)
+    document.querySelectorAll('#navMenu a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var menu = document.getElementById('navMenu');
+        var collapse = bootstrap.Collapse.getInstance(menu);
+        if (collapse && menu.classList.contains('show')) collapse.hide();
+      });
     });
   </script>
 </body>
