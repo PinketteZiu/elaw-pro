@@ -287,6 +287,15 @@ section { padding: 4rem 0; }
   transition: background 0.2s;
 }
 
+.tarif-card-offre {
+  color: whitesmoke;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border);
+  background: #4d412e9e;
+  display: flex; flex-direction: column;
+  transition: background 0.2s;
+}
+
 .tarif-card:hover { background: var(--noir); }
 
 .tarif-price {
@@ -319,8 +328,8 @@ section { padding: 4rem 0; }
 }
 
 .tarif-note {
-  text-align: center; font-size: 8.5pt;
-  color: var(--gris-mut); margin-top: 2.5rem; font-style: italic;
+  text-align: center; font-size: 10.5pt;
+  color: var(--gris); margin-top: 2.5rem; font-style: italic;
 }
 
 /* ---------- Témoignages ---------- */
